@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3><b>100 M Race Details</b></h3>
+
+
+<hr /><a href="http://127.0.0.1:8000/admin_app">Admin</a><br>
+<a href="http://127.0.0.1:8000/information_table/rankings">Rank Table</a>
+<hr />
+<form action="filtering">
+race number :<input type="text" name="filterings1" style="color: black" autocomplete="off"> 
+Player name :<input type="text" name="filterings2" style="color: black" autocomplete="off"> 
+<input type="submit" style="background-color: limegreen; color: black;border-radius: 6px;border: none;font-size: 20px" value="Filter" />
+    </form>
+
+<hr />
+<table class="one">
+    <tr><th>Race No.</th><th>Player A</th><th>Player B</th><th>Winner</th></tr>
+{% for single_race in races %}
+<tr><td>{{single_race.match_number}}</td><td>{{single_race.player_a}}</td><td>{{single_race.player_b}}</td><td>{{single_race.winner}}</td></tr>
+{% endfor %}
+
+{% endblock %}

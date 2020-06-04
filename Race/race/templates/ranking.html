@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3><b>100 M Race Rank Table</b></h3>
+<hr />
+<a href="http://127.0.0.1:8000/admin_app">Admin</a><br>
+<a href="http://127.0.0.1:8000/information_table">Race Details</a>
+<hr />
+<table class="two">
+    <tr><th>Rank</th><th>Name</th><th>Wins</th></tr>
+{% for key,value in rank_list_dict.items %}
+    <tr><td>{{forloop.counter}}</td><td>{{key}}</td><td>{{value}}</td></tr>
+{% endfor %}
+</table>
+<hr />
+The above table contains the postions of players who had won atleast once
+{% endblock %}

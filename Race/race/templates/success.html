@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if status == "wrong password" %}
+<h2> Opps! The Admin's password is incorrect</h2>
+<hr />
+<a href="http://127.0.0.1:8000/admin_app">Admin</a><br>
+<a href="http://127.0.0.1:8000/information_table">Race Details</a><br>
+<a href="http://127.0.0.1:8000/information_table/rankings">Rank Table</a>
+<hr />
+
+          {% endif %}
+
+{% if status == "success" %}
+<h2> Success!</h2>
+<hr />
+<a href="http://127.0.0.1:8000/admin_app">Admin</a><br>
+<a href="http://127.0.0.1:8000/information_table">Race Details</a><br>
+<a href="http://127.0.0.1:8000/information_table/rankings">Rank Table</a>
+<hr />
+
+          {% endif %}
+{% if status == "fail" %}
+<h2> Opps! You may have entered wrong data...</h2>
+<hr/><a href="http://127.0.0.1:8000/admin_app">Admin</a><br>
+<a href="http://127.0.0.1:8000/information_table">Race Details</a><br>
+<a href="http://127.0.0.1:8000/information_table/rankings">Rank Table</a>
+<hr />
+          {% endif %}
+{% endblock %}

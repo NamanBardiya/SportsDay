@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3><b>100 M Race Details Filtered</b></h3>
+
+
+<hr /><a href="http://127.0.0.1:8000/admin_app">Admin</a><br>
+<a href="http://127.0.0.1:8000/information_table/rankings">Rank Table</a><br>
+<a href="http://127.0.0.1:8000/information_table">Race Details</a>
+<hr />
+
+<table class="one">
+    <tr><th>Race No.</th><th>Player A</th><th>Player B</th><th>Winner</th></tr>
+{% for single_race in races %}
+    {% ifequal forloop.counter num %}
+<tr><td>{{single_race.match_number}}</td><td>{{single_race.player_a}}</td><td>{{single_race.player_b}}</td><td>{{single_race.winner}}</td></tr>
+    {% endifequal %}
+    {% ifequal name  single_race.player_a%}
+<tr><td>{{single_race.match_number}}</td><td>{{single_race.player_a}}</td><td>{{single_race.player_b}}</td><td>{{single_race.winner}}</td></tr>
+    {% endifequal %}
+    {% ifequal name  single_race.player_b%}
+<tr><td>{{single_race.match_number}}</td><td>{{single_race.player_a}}</td><td>{{single_race.player_b}}</td><td>{{single_race.winner}}</td></tr>
+    {% endifequal %}
+
+{% endfor %}
+
+{% endblock %}

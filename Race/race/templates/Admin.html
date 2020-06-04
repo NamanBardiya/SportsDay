@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Admin Portal</h2>
+<hr />
+<a href="http://127.0.0.1:8000/information_table">Race Details</a><br>
+<a href="http://127.0.0.1:8000/information_table/rankings">Rank Table</a>
+<hr />
+    <table class="two">
+        <tr><td>
+    <form action="add">
+        Player A's Name :<br>
+        <input type="text" name="playera" style="color: black"><br>
+        Player B's Name : <br>
+        <input type="text" name="playerb" style="color: black"><br>
+        Winner's Race :<br>
+        <input type="text" name="winnerp" style="color: black"><br>
+        Admin Password :
+        <input type="text" name="pc" style="color: black" autocomplete="off"><br><br>
+        <input type="submit" style="background-color: limegreen; color: black;border-radius: 6px;border: none;font-size: 20px" >
+    </form>
+            </td>
+        </tr>
+</table>
+{% endblock %}
